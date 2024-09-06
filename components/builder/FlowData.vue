@@ -10,7 +10,7 @@
         <button class="text-sm text-gray-600" @click="close">
           <Icon
             name="material-symbols:close-small-outline"
-            class="hover:bg-red-800 transition-all"
+            class="hover:bg-red-800"
             size="24"
           />
         </button>
@@ -64,7 +64,7 @@
           </button>
         </div>
 
-        <button class="hover:opacity-90 transition-all">
+        <button class="hover:opacity-90">
           <Icon
             name="material-symbols-light:delete-outline"
             size="24"

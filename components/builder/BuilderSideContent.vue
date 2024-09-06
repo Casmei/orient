@@ -8,7 +8,7 @@
         </div>
         <button
           @click="toggleState"
-          :class="['hover:opacity-90 transition-all rounded-2xl w-18 gap-1 flex items-center justify-between', isActive ? 'bg-green-400' : 'bg-red-400']"
+          :class="['hover:opacity-90 rounded-2xl w-18 gap-1 flex items-center justify-between', isActive ? 'bg-green-400' : 'bg-red-400']"
         >
           <span class="ml-2 font-less">{{ isActive ? 'Ativo' : 'Inativo' }}</span>
           <Icon :name="isActive ? 'ion:ellipse' : 'ion:ellipse-outline'" size="22px" />

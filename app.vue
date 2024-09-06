@@ -4,19 +4,16 @@
       @exec="handleClick"
       :show-builder-flow="showBuilderFlow"
       @closing="handleClose"
-      v-motion-slide-left
     />
     <section>
       <FlowSideBar
         v-if="showBuilderFlow"
         @closing="handleClose"
-        v-motion-fade
       />
 
       <FlowData
         v-if="showBuilderFlow"
         @closing="handleClose"
-        v-motion-slide-left
       />
     </section>
   </div>

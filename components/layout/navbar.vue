@@ -38,7 +38,7 @@
           <Icon name="material-symbols:play-arrow" size="24px" /> Testar Fluxo
         </button>
         <button
-          class="bg-[#167CDD] text-white px-8 p-2 rounded flex items-center gap-2 border hover:bg-black transition-all"
+          class="bg-[#167CDD] text-white px-8 p-2 rounded flex items-center gap-2 border hover:bg-black"
         >
           <Icon name="material-symbols:save-outline-sharp" size="20px" /> Salvar
         </button>
