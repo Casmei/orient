@@ -39,22 +39,25 @@
           :type="block.type"
           @toggle="handleToggle"
         />
-        <transition name="slide">
           <Integrations v-if="activeBlock === block.type" v-motion-slide-bottom />
-        </transition>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import Integrations from '/components/builder/Integrations.vue';
-import IntegrationBlock from '/components/builder/IntegrationBlock.vue';
+import { ref } from 'vue'; // Importa a função 'ref' para estado reativo
+import Integrations from '/components/builder/Integrations.vue'; // Componente de integrações
+import IntegrationBlock from '/components/builder/IntegrationBlock.vue'; // Blocos de integração
 
+
+// 'isActive' armazena o estado ativo/inativo do fluxo, controlando o botão de estado
 const isActive = ref(true);
+
+// 'activeBlock' mantém qual bloco de integração está atualmente expandido (ou nenhum)
 const activeBlock = ref(null);
 
+// Array de blocos de integração com ícones, títulos e tipos
 const blocks = [
   { icon: 'ion:md-flash', title: 'Integrações', type: 'integrations' },
   { icon: 'material-symbols:timer', title: 'Gatilhos', type: 'triggers' },
@@ -65,19 +68,24 @@ const blocks = [
   { icon: 'ph:brain-fill', title: 'Inteligência Artificial', type: 'ai' }
 ];
 
+// Função para alternar o estado ativo/inativo do fluxo
 const toggleState = () => {
-  isActive.value = !isActive.value;
-  setTimeout(() => close(), 500);
+  isActive.value = !isActive.value; // Inverte o estado
+  setTimeout(() => close(), 500); // Após 500ms, chama a função 'close' para emitir o evento de fechamento
 };
 
+// Função chamada ao alternar um bloco de integração
 const handleToggle = ({ isActive: active, type }) => {
   if (active) {
-    activeBlock.value = type;
+    activeBlock.value = type; // Define o bloco ativo se ele estiver ativo
   } else {
-    activeBlock.value = null;
+    activeBlock.value = null; // Reseta se o bloco for desativado
   }
 };
 
+// Define o evento 'closing' que o componente emite
 const emit = defineEmits(['closing']);
+
+// Função para emitir o evento de fechamento
 const close = () => emit('closing');
 </script>

@@ -1,9 +1,26 @@
-:root {
-  --background-color-blue: #167cdd;
+::-webkit-scrollbar-button {
+  width: 100px;
+  height: 100px;
 }
 
-* {
-  font-family: Inter, sans-serif;
+.button-menu {
+  transition: ease-in 0.1s;
+}
+
+.exec,
+.config,
+.edit {
+  border-bottom: 1px solid var(--background-color-blue);
+}
+
+::-webkit-scrollbar-track {
+  background: #666666;
+  border: 0px none #ffffff;
+  border-radius: 54px;
+}
+
+::-webkit-scrollbar-track:active {
+  background: #333333;
 }
 
 .font-strong {
@@ -14,8 +31,39 @@
   font-weight: 300;
 }
 
-.button-menu {
-  transition: ease-in 0.1s;
+::-webkit-scrollbar-thumb {
+  background: #b9bdda;
+  border: 0px none #ffffff;
+  border-radius: 97px;
+}
+
+.bg-blue-project {
+  background-color: var(--background-color-blue);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #95adf4;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ffffff;
+}
+
+* {
+  font-family: Inter, sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+::-webkit-scrollbar-track:hover {
+  background: #666666;
 }
 
 .button-menu:hover {
@@ -24,14 +72,8 @@
   transition: ease-in 0.1ms;
 }
 
-.exec,
-.config,
-.edit {
-  border-bottom: 1px solid var(--background-color-blue);
-}
-
-.bg-blue-project {
-  background-color: var(--background-color-blue);
+:root {
+  --background-color-blue: #167cdd;
 }
 
 /* Firefox (uncomment to work in Firefox, although other properties will not work!)  */
@@ -39,36 +81,3 @@
   scrollbar-width: thin;
   scrollbar-color: #BACCFF #167CDD;
 }*/
-::-webkit-scrollbar {
-  width: 7px;
-  height: 7px;
-}
-::-webkit-scrollbar-button {
-  width: 100px;
-  height: 100px;
-}
-::-webkit-scrollbar-thumb {
-  background: #b9bdda;
-  border: 0px none #ffffff;
-  border-radius: 97px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #ffffff;
-}
-::-webkit-scrollbar-thumb:active {
-  background: #95adf4;
-}
-::-webkit-scrollbar-track {
-  background: #666666;
-  border: 0px none #ffffff;
-  border-radius: 54px;
-}
-::-webkit-scrollbar-track:hover {
-  background: #666666;
-}
-::-webkit-scrollbar-track:active {
-  background: #333333;
-}
-::-webkit-scrollbar-corner {
-  background: transparent;
-}

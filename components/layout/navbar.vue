@@ -3,9 +3,8 @@
     <div
       class="justify-between px-8 text-[#1A202C] font-strong hidden xl:flex"
       :class="{
-        'ml-96 ': showComponentFlow === true,
-
-        'ml-0': showComponentFlow === false,
+        'ml-96 ': showBuilderFlow === true,
+        'ml-0': showBuilderFlow === false,
       }"
     >
       <div class="flex gap-4">
@@ -46,7 +45,7 @@
       </div>
     </div>
 
-    <div class="block xl:hidden font-strong" v-if="!showComponentFlow">
+    <div class="block xl:hidden font-strong" v-if="!showBuilderFlow">
       <div class="flex justify-around p-4">
         <button
           @click="handleClick('edit')"
@@ -67,22 +66,26 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref } from "vue"; // Importa a função 'ref' para gerenciamento de estado reativo
 
+// Define as propriedades do componente, aqui 'showComponentFlow' controla o layout visual
 const props = defineProps({
-  showComponentFlow: Boolean,
+  showBuilderFlow: Boolean,
 });
 
+// Define os eventos que o componente pode emitir, como 'exec' e 'closing'
 const emit = defineEmits(["exec", "closing"]);
 
+// 'selectedTab' é uma ref (reativa) que armazena a aba atualmente selecionada
 const selectedTab = ref("");
 
+// Função chamada quando um botão é clicado, atualiza a aba selecionada e emite eventos
 function handleClick(tab: string) {
-  selectedTab.value = tab;
+  selectedTab.value = tab; // Atualiza a aba selecionada
   if (selectedTab.value === "exec") {
-    emit("exec");
+    emit("exec"); // Emite o evento 'exec' quando a aba "Execuções" é clicada
   } else {
-    emit("closing");
+    emit("closing"); // Emite o evento 'closing' para outras abas
   }
 }
 </script>

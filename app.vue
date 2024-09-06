@@ -2,7 +2,7 @@
   <div class="flex flex-col xl:flex-row justify-between w-full">
     <Navbar
       @exec="handleClick"
-      :show-component-flow="showBuilderFlow"
+      :show-builder-flow="showBuilderFlow"
       @closing="handleClose"
       v-motion-slide-left
     />
@@ -13,7 +13,7 @@
         v-motion-fade
       />
 
-      <PopUpToShowFlowInComputer
+      <FlowData
         v-if="showBuilderFlow"
         @closing="handleClose"
         v-motion-slide-left
@@ -26,7 +26,7 @@
 import { ref } from "vue";
 import Navbar from "./components/layout/navbar.vue";
 import FlowSideBar from "./components/builder/BuilderSideContent.vue";
-import PopUpToShowFlowInComputer from "./components/builder/FlowData.vue";
+import FlowData from "./components/builder/FlowData.vue";
 
 const showBuilderFlow = ref(false);
 
